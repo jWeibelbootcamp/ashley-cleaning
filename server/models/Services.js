@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Services extends Model {}
+class Services extends Model { }
 
 Services.init(
     {
@@ -10,38 +10,33 @@ Services.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-          },
-          name: {
+        },
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
-          },
-          description: {
+        },
+        description: {
             type: DataTypes.STRING,
-          },
-          date_created: {
-            type: DataTypes.DATE,
+        },
+        price: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
-          },
-          needed_funding: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-          },
-          user_id: {
+        },
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'id',
+                model: 'user',
+                key: 'id',
             },
-          },
         },
-        {
-          sequelize,
-          timestamps: false,
-          freezeTableName: true,
-          underscored: true,
-          modelName: 'project',
-        }
-      );
-      
-      module.exports = Project;
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'services',
+    }
+);
+
+module.exports = Services;
