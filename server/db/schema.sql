@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS ashley_db;
-CREATE DATABASE ashley_db;

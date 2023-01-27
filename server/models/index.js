@@ -1,13 +1,4 @@
-const User = require('./User');
-const Service = require('./Service');
+const Tech = require('./Tech');
+const Matchup = require('./Matchup');
 
-User.hasMany(Service, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-Service.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-module.exports = { User, Service };
+module.exports = { Tech, Matchup };
