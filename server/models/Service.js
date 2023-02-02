@@ -6,6 +6,10 @@ const techSchema = new Schema({
     required: true,
     unique: true,
   },
+  price: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Tech = model('Tech', techSchema);
