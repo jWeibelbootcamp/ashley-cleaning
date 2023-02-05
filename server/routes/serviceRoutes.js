@@ -3,15 +3,9 @@ const router = express.Router();
 const { getService, setService, updateService, deleteService } = require('../controllers/serviceController');
 
 // localhost:5000/api/service/
-router.get('/', getService);
-
-// localhost:5000/api/service/
-router.post('/', setService);
+router.route('/').get(getService).post(setService);
 
 // localhost:5000/api/service/:id
-router.put('/', updateService);
+router.route('/:id').put(updateService).delete(deleteService);
 
-// localhost:5000/api/service/:id
-router.delete('/', deleteService);
-
-module.exports = router; 
+module.exports = router;
