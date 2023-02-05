@@ -9,7 +9,11 @@ const getService = (req, res) => {
 // @route   POST /api/service
 // @access Private
 const setService = (req, res) => {
-    res.status(200).json({ message: 'set services' })
+    if(!req.body.text) { // this may need to be different than text
+        res.status(400)
+        throw new Error('error message to be later determined')
+    };
+    res.status(200).json({ message: 'set services' });
 };
 
 // @desc    update services
