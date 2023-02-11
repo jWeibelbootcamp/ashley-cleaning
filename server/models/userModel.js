@@ -5,16 +5,14 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a name'],
     },
-    name: {
+    email: {
         type: String,
-        required: [true, 'Please add a name'],
+        required: [true, 'Please add an email'],
     },
-    name: {
+    password: {
         type: String,
-        required: [true, 'Please add a name'],
+        required: [true, 'Please add a password'],
     },
-    name: {
-        type: String,
-        required: [true, 'Please add a name'],
-    },
-})
+});
+
+module.exports = mongoose.model('User', userSchema);
