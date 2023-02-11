@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/service', require('./routes/serviceRoutes'));
+app.use('/api/user', require('./routes/userRoutes'));
 
 // overrides default express error handler with custom
 app.use(errorHandler);
