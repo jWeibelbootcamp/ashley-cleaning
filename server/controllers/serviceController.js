@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 
 const Service = require('../models/serviceModel');
+const User = require('../models/userModel');
 
 // @desc    get services
 // @route   GET /api/service
@@ -14,13 +15,13 @@ const getService = asyncHandler(async (req, res) => {
 // @route   POST /api/service
 // @access Private
 const setService = asyncHandler(async (req, res) => {
-    if(!req.body.text) { // this may need to be different than text
+    if(!req.body.service) { 
         res.status(400)
-        throw new Error('error message to be later determined')
+        throw new Error('No service selected.')
     };
 
     const service = await Service.create({
-        text: req.body.text,
+        service: req.body.service,
         user: req.user.id,
     });
 
@@ -36,6 +37,20 @@ const updateService = asyncHandler(async (req, res) => {
     if(!service) {
         res.status(400)
         throw new Error('Service not found.')
+    };
+
+    const user = await User.findById(req.user.id);
+
+    // check for user
+    if(!user) {
+        res.status(401);
+        throw new Error('User not found.');
+    };
+
+    // Make sure logged in user matches service user
+    if(service.user.toString() !== user.id) {
+        res.status(401);
+        throw new Error('User not authorized.');
     };
 
     const updatedService = await Service.findByIdAndUpdate(req.params.id, req.body, {

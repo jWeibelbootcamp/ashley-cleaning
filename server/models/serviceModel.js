@@ -6,13 +6,13 @@ const serviceSchema = mongoose.Schema({
         required: true,
         ref: 'User',
     },    
-    name: {
+    service: {
         type: String,
         required: [true, 'Please add a service'],
     },
     price: {
         type: Number,
-        required: [true, 'Please add a price'],
+        // required: [true, 'Please add a price'],
     }
 });
 
