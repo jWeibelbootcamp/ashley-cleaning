@@ -70,7 +70,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // @desc    get user data
 // @route   GET /api/user/me
-// @access Public
+// @access Private
 const getMe = asyncHandler(async (req, res) => {
     res.json({ message: 'User data display'});
 });
