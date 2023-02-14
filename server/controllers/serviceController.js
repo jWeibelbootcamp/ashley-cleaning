@@ -6,7 +6,7 @@ const Service = require('../models/serviceModel');
 // @route   GET /api/service
 // @access Private
 const getService = asyncHandler(async (req, res) => {
-    const services = await Service.find()
+    const services = await Service.find({ user: req.user.id });
     res.status(200).json({ services });
 });
 
@@ -21,7 +21,8 @@ const setService = asyncHandler(async (req, res) => {
 
     const service = await Service.create({
         text: req.body.text,
-    })
+        user: req.user.id,
+    });
 
     res.status(200).json({ service });
 });
