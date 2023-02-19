@@ -3,6 +3,11 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 
+
+// she wants a multipage app - green and gold theme
+// probably home/landing/dashboard, user registration, user login, and services/scheduling
+
+
 function App() {
   return (
     <div className="App">
