@@ -52,7 +52,7 @@ const Register = () => {
               id="email"
               name="email"
               value={email}
-              placeholder="Your email address"
+              placeholder="Email address"
               onChange={onChange}
             />
           </div>
@@ -63,7 +63,7 @@ const Register = () => {
               id="password"
               name="password"
               value={password}
-              placeholder="Your password"
+              placeholder="Password"
               onChange={onChange}
             />
           </div>
