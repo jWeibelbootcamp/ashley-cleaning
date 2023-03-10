@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../auth/authSlice';
 import Spinner from '../components/Spinner';
-
+//apparently we dont care about all of this anymore........
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -100,7 +100,7 @@ const Register = () => {
           </div>
           <div className='form-group'>
             <input
-              type='password'
+              type='password'   // investigate type password requirements
               className='form-control'
               id='password'
               name='password'
