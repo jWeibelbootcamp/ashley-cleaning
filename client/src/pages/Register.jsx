@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../auth/authSlice';
 import Spinner from '../components/Spinner';
-//apparently we dont care about all of this anymore........
+//apparently we dont care about all of this anymore........fgsdgsdgfs
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
