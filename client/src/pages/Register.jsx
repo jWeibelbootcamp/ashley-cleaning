@@ -64,7 +64,7 @@ const Register = () => {
 
   if (isLoading) {
     return <Spinner />;
-  }
+  };
 
   return (
     <>
